@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div>
+    {% for product in products %}
+    <a href="{% url 'poster' product.id %}">
+    <div style="text-align: center;   width: 300px;
+    height: 100px;
+    border: 1px solid rgb(150, 95, 13);">
+        <div>
+            <h>Picture</h><hr>
+        </div>
+        <div>
+            <h>{{product.product_name}}</h><br>
+            <h>{{product.product_price}}</h>
+        </div>
+    </div>
+    </a>
+    <br>
+
+
+    {% endfor %}
+</div>
+
+
+{% endblock content %}
