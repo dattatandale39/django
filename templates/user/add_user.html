@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div style="text-align: center;">
+<form action="" method="POST">
+{% csrf_token %}
+<input type="text" name="first_name" placeholder="first name"><br>
+<input type="text" name="last_name" placeholder="Last name"><br>
+<input type="text" name="username" placeholder="user name"><br>
+<input type="email" name="email" placeholder="email"><br>
+<input type="password" name="password1" placeholder="password"><br>
+<input type="password" name="password2" placeholder="confirm password"><br>
+<input type="submit"><br>
+
+</form>
+<div>
+    {% for message in messages%}
+    <div>
+        {{message}}
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock content %}

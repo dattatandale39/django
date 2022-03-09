@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div style="text-align: center;">
+    <form action="" method="POST">
+    {% csrf_token %}
+        <input type="text" name="username" ><br>
+        <input type="password" name="password"><br>
+        <input type="submit"><br>
+    </form>    
+    <a href="{% url 'add_user' %}">New user</a>
+
+    <div>
+        {% for message in messages%}
+        <div>
+            {{message}}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock content %}
